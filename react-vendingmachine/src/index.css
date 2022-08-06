@@ -1,0 +1,63 @@
+html,
+
+button {
+	margin-right: 0.3rem;
+}
+
+input {
+	margin-right: 0.3rem;
+}
+
+#charge-result {
+  margin-top: 20px;
+}
+
+#product-result {
+  margin-top: 20px;
+}
+
+#management-table th {
+  width: 140px;
+  height: 40px;
+}
+
+#management-table td {
+  width: 140px;
+  height: 40px;
+}
+
+#charge-table th {
+  width: 80px;
+  height: 40px;
+}
+
+#charge-table td {
+  width: 80px;
+  height: 40px;
+}
+
+#product-table th {
+  width: 140px;
+  height: 40px;
+}
+
+#product-table td {
+  width: 140px;
+  height: 40px;
+}
+
+#product-coin-table th {
+  width: 80px;
+  height: 40px;
+}
+
+#product-coin-table td {
+  width: 80px;
+  height: 40px;
+}
+
+table, td, th {
+  border : 1px solid black;
+  border-collapse : collapse;
+  text-align: center;
+};
