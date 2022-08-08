@@ -16,6 +16,6 @@ jobs:
         with:
           node-version: '18'
       - run: npm install
-        working-directory: $({env.react-baseball})
+        working-directory: ${env.react-baseball}
       - run: npm test
-        working-directory: $({env.react-baseball})
+        working-directory: ${env.react-baseball}
