@@ -1,4 +1,4 @@
-name: React Baseball
+name: Bare Minimum Requirements
 
 # 언제 job을 작동시킬지
 on: [push, pull_request]
@@ -7,15 +7,15 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
-    env:
-      react-baseball: ./react-baseball
+    defaults: 
+      run: 
+        shell: bash
+        working-directory: react-baseball
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: Bare Minimum Requirements
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v1
         with:
-          node-version: '18'
+          node-version: '16'
       - run: npm install
-        working-directory: ${env.react-baseball}
       - run: npm test
-        working-directory: ${env.react-baseball}
