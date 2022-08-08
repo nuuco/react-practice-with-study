@@ -1,0 +1,19 @@
+name: react-practice-with-study-react-baseball
+
+# 언제 job을 작동시킬지
+on: [push, pull_request]
+
+# 어떤 job을 할지
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Bare Minimum Requirements
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm install
+        working-directory: $({ react-baseball })
+      - run: npm test
+        working-directory: $({ react-baseball })
