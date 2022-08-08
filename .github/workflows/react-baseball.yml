@@ -13,7 +13,7 @@ jobs:
         working-directory: react-baseball
     steps:
       - uses: actions/checkout@v2
-      - name: Bare Minimum Requirements
+      - name: baseball
         uses: actions/setup-node@v1
         with:
           node-version: '16'
