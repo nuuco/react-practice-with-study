@@ -8,7 +8,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      working-directory: ./react-baseball
+      working-directory: react-baseball
     steps:
       - uses: actions/checkout@v3
       - name: Bare Minimum Requirements
