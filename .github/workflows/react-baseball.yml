@@ -8,7 +8,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      working-directory: react-baseball
+      react-baseball: ../react-baseball
     steps:
       - uses: actions/checkout@v3
       - name: Bare Minimum Requirements
@@ -16,6 +16,6 @@ jobs:
         with:
           node-version: '18'
       - run: npm install
-        working-directory: $({env.working-directory})
+        working-directory: $({react-baseball})
       - run: npm test
-        working-directory: $({env.working-directory})
+        working-directory: $({react-baseball})
