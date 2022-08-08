@@ -1,4 +1,4 @@
-name: Bare Minimum Requirements
+name: react-baseball test
 
 # 언제 job을 작동시킬지
 on: [push, pull_request]
