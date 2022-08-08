@@ -1,4 +1,4 @@
-name: react-practice-with-study-react-baseball
+name: React Baseball
 
 # 언제 job을 작동시킬지
 on: [push, pull_request]
@@ -7,6 +7,8 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./react-baseball
     steps:
       - uses: actions/checkout@v3
       - name: Bare Minimum Requirements
