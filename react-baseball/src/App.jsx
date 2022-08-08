@@ -125,7 +125,7 @@ function App() {
 
   return (
     <div id="app">
-    <h1>⚾ 숫자 야구 게임 (테스트 실패용)</h1>
+    <h1>⚾ 숫자 야구 게임</h1>
     <p>
       <strong>1~9까지의 수</strong>를 중복없이
       <strong>3개</strong> 입력해주세요. <br />
