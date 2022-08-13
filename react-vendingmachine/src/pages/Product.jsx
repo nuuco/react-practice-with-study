@@ -20,7 +20,7 @@ function Product({products, setProducts, coins, setCoins}) {
     setNonRefund(0);
   }
 
-  const handleBuyBtn = (idx) => {
+  const handleBuyBtn = (idx) => (event) => {
     //{ product: "솔의눈", price: "1000", count: "1" }
     let {product, price, count} = products[idx];
 
@@ -90,7 +90,7 @@ function Product({products, setProducts, coins, setCoins}) {
               <td>{el.product}</td>
               <td>{el.price}</td>
               <td>{el.count}</td>
-              <td><button onClick={() => handleBuyBtn(idx)} disabled={el.count > 0 ? false : true} >구매하기</button></td>
+              <td><button onClick={handleBuyBtn(idx)} disabled={el.count > 0 ? false : true} >구매하기</button></td>
             </tr>
           ))}
         </tbody>
