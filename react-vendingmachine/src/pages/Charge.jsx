@@ -36,14 +36,13 @@ function Charge({coins, setCoins}) {
     const cnt10 = Math.floor(money / 10);
 
     //coins = { 500: 0, 100: 0, 50: 0, 10: 0 };
-    setCoins((prev) => (
-      {
-        500: prev[500] + cnt500,
-        100: prev[100] + cnt100,
-        50: prev[50] + cnt50,
-        10: prev[10] + cnt10,
-      }
-    ))
+    /* 테스트 코드에 맞게 수정 */
+    let result = {...coins};
+    result[500] += cnt500;
+    result[100] += cnt100;
+    result[50] += cnt50;
+    result[10] += cnt10;
+    setCoins(result);
   }
 
   return (
