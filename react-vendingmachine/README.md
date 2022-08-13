@@ -1,3 +1,6 @@
+## 💎 배포 링크
+👉 https://react-vendingmachine.netlify.app/
+
 ## 🙌 기능 요구사항
 
 ### ✅ 1) 공통

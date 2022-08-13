@@ -1,3 +1,6 @@
+## 💎 배포 링크
+👉 https://react-racingcar.netlify.app/
+
 ## 🙌 기능 요구사항
 
 - [x] 주어진 횟수 동안 n 대의 자동차는 전진 또는 멈출 수 있다.
