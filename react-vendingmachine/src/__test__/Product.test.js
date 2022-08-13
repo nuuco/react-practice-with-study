@@ -82,7 +82,8 @@ describe("💰 상품 구매 탭 테스트 케이스", () => {
     const setProducts = jest.fn();
     const { rerender } = render(<Product products={products} setProducts={setProducts} coins={coins} setCoins={setCoins}/>);
     const $button = screen.getByRole("button", { name: "구매하기" });
-    userEvent.click($button);
+    expect($button).not.toBeDisabled();
+    products[0].count -= 1;
     rerender(<Product products={products} setProducts={setProducts}/>)
     expect($button).toBeDisabled();
   });
