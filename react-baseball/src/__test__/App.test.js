@@ -147,7 +147,7 @@ describe("🎊 승리 테스트 케이스", () => {
         fireEvent.change($input, { target: { value: "123" } });
         fireEvent.click($button);
         expect($result.textContent).toEqual("승리");
-        const $resetbutton = screen.getByText("restart");
+        const $resetbutton = screen.getByText("재시작");
         fireEvent.click($resetbutton);
         expect(reloadMock).toHaveBeenCalledTimes(0);
         fireEvent.click($resetbutton);
