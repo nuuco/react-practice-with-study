@@ -96,3 +96,9 @@ Random.shuffle(array)
 ```javascript
 Random.shuffle([1, 2, 3, 4, 5]); // [2, 4, 1, 3, 5]
 ```
+
+
+## 🤔 테스트 케이스 FAIL...
+구현은 잘 되는데, 테스트 통과 못한 케이스 3개...
+* Jest 사용법을 아직 잘 숙지하지 못해 원인을 찾지 못했다.
+<img width="734" alt="스크린샷 2022-08-13 오전 11 13 03" src="https://user-images.githubusercontent.com/89282099/184464749-a03db6b2-aaae-44c1-99b9-0a92f5e1bf6c.png">
