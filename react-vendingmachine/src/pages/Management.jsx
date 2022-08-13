@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react';
 
 function Management({products, setProducts}) {
   // products의 요소 데이터 형식 { product: "솔의눈", price: "1000", count: "1" }
