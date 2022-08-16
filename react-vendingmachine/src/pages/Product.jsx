@@ -18,6 +18,7 @@ function Product({products, setProducts, coins, setCoins}) {
     setLeftMoney((prev) => prev + money);
     setChanges({ 500: 0, 100: 0, 50: 0, 10: 0 });
     setNonRefund(0);
+    e.target.reset();
   }
 
   const handleBuyBtn = (idx) => (event) => {

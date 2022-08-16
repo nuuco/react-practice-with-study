@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Management({products, setProducts}) {
+function Management({products = [], setProducts}) {
   // products의 요소 데이터 형식 { product: "솔의눈", price: "1000", count: "1" }
   const handleOnSubmit = (e) => {
     e.preventDefault();
@@ -9,10 +9,10 @@ function Management({products, setProducts}) {
     const count = e.target.count.value;
 
     if(product === "") return alert("상품명을 입력해주세요.");
-    else if(price === "") return alert("겨격을 입력해주세요.");
-    else if(count === "") return alert("수량을 입력해주세요.");
-    else if(Number(count) <= 0) return alert("수량은 0보다 커야합니다.");
-    else if(Number(price) < 100 || Number(price) % 10 !== 0) return alert("가격은 100원 이상이여야하고, 10원 단위여야 합니다.");
+    if(price === "") return alert("겨격을 입력해주세요.");
+    if(count === "") return alert("수량을 입력해주세요.");
+    if(Number(count) <= 0) return alert("수량은 0보다 커야합니다.");
+    if(Number(price) < 100 || Number(price) % 10 !== 0) return alert("가격은 100원 이상이여야하고, 10원 단위여야 합니다.");
 
     const newProduct = {
       product,
@@ -21,6 +21,7 @@ function Management({products, setProducts}) {
     }
 
     setProducts([...products, newProduct]);
+    e.target.reset();
   }
 
   return (
@@ -42,9 +43,7 @@ function Management({products, setProducts}) {
           </tr>
         </thead>
         <tbody>
-          {/* products && 를 넣어주지 않으면 'map' undefined 가 뜬다. (테스트에서만) */}
-          {/* 첫 렌더링시 products에 데이터가 안들어와서 undefined 일때 map 메서드를 써서 발생하는 오류 */}
-          {products && products.map((el, idx) => (
+          {products.map((el, idx) => (
             <tr key={idx}>
               <td>{el.product}</td>
               <td>{el.price}</td>
