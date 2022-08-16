@@ -101,7 +101,34 @@ Random.shuffle([1, 2, 3, 4, 5]); // [2, 4, 1, 3, 5]
 ```
 
 
-## 🤔 테스트 케이스 FAIL...
-구현은 잘 되는데, 테스트 통과 못한 케이스 3개...
-* Jest 사용법을 아직 잘 숙지하지 못해 원인을 찾지 못했다.
-<img width="734" alt="스크린샷 2022-08-13 오전 11 13 03" src="https://user-images.githubusercontent.com/89282099/184464749-a03db6b2-aaae-44c1-99b9-0a92f5e1bf6c.png">
+## 🔮 코드리뷰 적용하기
+- props의 undefined 처리는 props를 구조분해 할당으로 가져오는 부분에서 기본값 처리를 해주면 된다.
+    - 리뷰 반영 전
+        ```javascript
+        //Management.jsx
+        {/* products && 를 넣어주지 않으면 'map' undefined 가 뜬다. (테스트에서만) */}
+        {/* 첫 렌더링시 products에 데이터가 안들어와서 undefined 일때 map 메서드를 써서 발생하는 오류 */}
+        {products && products.map((el, idx) => (
+        <tr key={idx}>
+            <td>{el.product}</td>
+            <td>{el.price}</td>
+            <td>{el.count}</td>
+        </tr>
+        ))}
+        ```
+    - 리뷰 반영 후
+        ```javascript
+        ///Management.jsx
+        function Management({products = [], setProducts}) { //기본값 처리
+            ...
+            {products.map((el, idx) => (
+                <tr key={idx}>
+                    <td>{el.product}</td>
+                    <td>{el.price}</td>
+                    <td>{el.count}</td>
+                </tr>
+            ))}
+        }
+        ```
+- `e.target.reset()` 을 사용하면 입력폼을 초기화 시킬 수 있다. 버튼 누른 후 값이 남아있지 않게 하기위해 사용하면 좋다.   
+    => 입력값을 받아오는 이벤트 핸들러의 하단에 `e.target.reset()` 를 추가해주었다.
